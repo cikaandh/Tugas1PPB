@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Tugas01PPB</string>
+    <string-array name="Gunung">
+        <item> Gunung Semeru </item>
+        <item> Gunung Penanggungan </item>
+        <item> Gunung Arjuna </item>
+        <item> Gunung Gedangan </item>
+        <item> Gunung Merbabu </item>
+        <item> Gunung Kawi </item>
+        <item> Gunung Lawu </item>
+        <item> Gunung Buthak </item>
+        <item> Gunung Panderman </item>
+
+    </string-array>
 </resources>

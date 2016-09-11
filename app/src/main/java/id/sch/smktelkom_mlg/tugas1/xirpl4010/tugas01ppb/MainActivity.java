@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etNama, etTelp, etSewa, etKembali, etTenda, etSB, etKmpr, etTas, etHL;
-    Spinner spGunung;
+    EditText etNama, etTelp, etSewa, etKembali;
+    Spinner Gunung;
     CheckBox cbTenda, cbSB, cbKmpr, cbTas, cbHL;
     RadioButton rbSL, rbDL;
     Button bSewa;
@@ -28,19 +28,15 @@ public class MainActivity extends AppCompatActivity {
         etTelp = (EditText) findViewById(R.id.editTextTelp);
         etSewa = (EditText) findViewById(R.id.editTextSewa);
         etKembali = (EditText) findViewById(R.id.editTextKembali);
-        etTenda = (EditText) findViewById(R.id.editTextTenda);
-        etSB = (EditText) findViewById(R.id.editTextSB);
-        etKmpr = (EditText) findViewById(R.id.editTextKmpr);
-        etTas = (EditText) findViewById(R.id.editTextTas);
-        etHL = (EditText) findViewById(R.id.editTextHL);
 
-        spGunung = (Spinner) findViewById(R.id.spinnerGunung);
 
         cbTenda = (CheckBox) findViewById(R.id.checkBoxTenda);
         cbSB = (CheckBox) findViewById(R.id.checkBoxSB);
         cbKmpr = (CheckBox) findViewById(R.id.checkBoxKmpr);
         cbTas = (CheckBox) findViewById(R.id.checkBoxTas);
         cbHL = (CheckBox) findViewById(R.id.checkBoxHL);
+
+        Gunung = (Spinner) findViewById(R.id.Gunung);
 
         rbSL = (RadioButton) findViewById(R.id.radioButtonSL);
         rbDL = (RadioButton) findViewById(R.id.radioButtonDL);
@@ -59,23 +55,74 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doProcess() {
+        if(isValid());
+        {
+            String nama = etNama.getText().toString();
+            String telp = etTelp.getText().toString();
+            String sewa = etSewa.getText().toString();
+            String kembali = etKembali.getText().toString();
+            String gunung = Gunung.getSelectedItem().toString();
+
+            String hsl2 ="Barang Yang Dipesan :\n";
+            int startlen = hsl2.length();
+
+            if (cbSB.isChecked()) hsl2 += cbSB.getText() + "\n";
+            if (cbKmpr.isChecked()) hsl2 += cbKmpr.getText() + "\n";
+            if (cbTas.isChecked()) hsl2 += cbTas.getText() + "\n";
+            if (cbHL.isChecked()) hsl2 += cbHL.getText() + "\n";
+            if (hsl2.length() == startlen) hsl2 += "Anda Belum Pernah Memilih";
+
+            String hsl3 = "Jenis tenda yang dipesan :\n ";
+            if (rbSL.isChecked()) {
+                hsl3 = rbSL.getText().toString();
+            } else if (rbDL.isChecked()) {
+                hsl3 = rbDL.getText().toString();
+            }
+
+            tvHasil.setText
+                    ("Nama : \n" + nama + "\n\nNomor Telepon :\n" + telp + "\n\n Gunung yang akan didaki :\n" + gunung + "\n\n Waktu penyewaan :\n" + sewa + "\n\nWaktu Pengembalian :\n" + kembali + "\n\n" + hsl2 + hsl3
+                    );
+        }
+    }
+
+    private boolean isValid()
+    {
+        boolean valid = true;
+
         String nama = etNama.getText().toString();
         String telp = etTelp.getText().toString();
-        String sewa = etSewa.getText().toString();
-        String kembali = etKembali.getText().toString();
-        String tenda = etTenda.getText().toString();
-        String sb = etSB.getText().toString();
-        String kompor = etKmpr.getText().toString();
-        tvHasil.setText
-                ("Nama                          :" + nama + "\n" +
-                        "Nomor Telepon              :" + telp + "\n" +
-                        "Waktu penyewaan            :" + sewa + "\n" +
-                        "Waktu Pengembalian     :" + kembali + "\n" +
-                        "Jumlah tenda       :" + tenda + "\n" +
-                        "Jumlah Sleeping bag:" + sb + "\n" +
-                        "Jumlah Kompor      :" + kompor + "\n"
-                );
 
+        if(nama.isEmpty())
+        {
+            etNama.setError("Nama belum diisi");
+            valid = false;
+        }
+        else if (nama.length()<3)
+        {
+            etNama.setError("Nama minimal 3 karakter");
+            valid = false;
+        }
+        else
+        {
+            etNama.setError(null);
+        }
+
+        if(telp.isEmpty())
+        {
+            etTelp.setError("Nomor Telepon belum diisi");
+            valid = false;
+        }
+        else if(telp.length()<4)
+        {
+            etTelp.setError("Nomor telp terdiri dari min 4 angka");
+            valid = false;
+        }
+        else
+        {
+            etTelp.setError(null);
+        }
+
+        return valid;
     }
 
 

@@ -49,71 +49,67 @@
             android:textStyle="bold"
             android:typeface="serif" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01"
-            android:text="Nama Penyewa :" />
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <EditText
+            android:hint="Nama Penyewa"
             android:id="@+id/editTextNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.01" />
+        </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01"
-            android:text="Nomor Telepon :" />
-
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <EditText
+            android:hint="Nomor Telepon"
             android:id="@+id/editTextTelp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.01"
             android:inputType="numberSigned" />
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:text="Akan melakukan pendakian ke :" />
+            android:text="Akan melakukan pendakian ke :"
+            />
 
         <Spinner
-
-            android:id="@+id/spinnerGunung"
+            android:entries="@array/Gunung"
+            android:id="@+id/Gunung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_weight="0.01"
-            android:text="Waktu Penyewaan :" />
+            />
 
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <EditText
+            android:hint="Waktu mulai sewa"
             android:id="@+id/editTextSewa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.01" />
+        </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01"
-            android:text="Waktu Pengembalian :" />
-
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <EditText
+            android:hint="Waktu pengembalian "
             android:id="@+id/editTextKembali"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.01" />
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:id="@+id/textView7"
@@ -152,11 +148,9 @@
 
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/editTextTenda"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
+            android:layout_height="wrap_content"></android.support.design.widget.TextInputLayout>
 
         <CheckBox
             android:id="@+id/checkBoxSB"
@@ -166,12 +160,6 @@
             android:checked="false"
             android:text="Sleeping Bag " />
 
-        <EditText
-            android:id="@+id/editTextSB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
-
         <CheckBox
             android:id="@+id/checkBoxKmpr"
             android:layout_width="wrap_content"
@@ -179,12 +167,6 @@
             android:layout_weight="0.01"
             android:checked="false"
             android:text="Kompor" />
-
-        <EditText
-            android:id="@+id/editTextKmpr"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
 
         <CheckBox
             android:id="@+id/checkBoxTas"
@@ -194,12 +176,6 @@
             android:checked="false"
             android:text="Tas Carrier Kapasitas 60 - 75 ltr" />
 
-        <EditText
-            android:id="@+id/editTextTas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
-
         <CheckBox
             android:id="@+id/checkBoxHL"
             android:layout_width="wrap_content"
@@ -207,12 +183,6 @@
             android:layout_weight="0.01"
             android:checked="false"
             android:text="Headlamp" />
-
-        <EditText
-            android:id="@+id/editTextHL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
 
         <Button
             android:id="@+id/buttonSewa"
