@@ -73,7 +73,8 @@
             android:id="@+id/editTextTelp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
+            android:layout_weight="0.01"
+            android:inputType="numberSigned" />
 
         <TextView
             android:id="@+id/textView4"
@@ -220,6 +221,13 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.01"
             android:text="Sewa" />
+
+        <TextView
+            android:id="@+id/textViewHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text=" " />
 
     </LinearLayout>
 </ScrollView>
