@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         etKembali = (EditText) findViewById(R.id.editTextKembali);
 
 
+
         cbTenda = (CheckBox) findViewById(R.id.checkBoxTenda);
         cbSB = (CheckBox) findViewById(R.id.checkBoxSB);
         cbKmpr = (CheckBox) findViewById(R.id.checkBoxKmpr);
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             String kembali = etKembali.getText().toString();
             String gunung = Gunung.getSelectedItem().toString();
 
+
             String hsl2 ="Barang Yang Dipesan :\n";
             int startlen = hsl2.length();
 
@@ -91,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
         String nama = etNama.getText().toString();
         String telp = etTelp.getText().toString();
+        String sewa = etSewa.getText().toString();
+        String kembali = etKembali.getText().toString();
 
         if(nama.isEmpty())
         {
@@ -120,6 +124,26 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             etTelp.setError(null);
+        }
+
+        if (sewa.isEmpty()) {
+            etSewa.setError("Tanggal penyewaan belum diisi");
+            valid = false;
+        } else if (sewa.length() > 8) {
+            etSewa.setError("Format tanggal penyewaan bukan ddmmyyyy");
+            valid = false;
+        } else {
+            etSewa.setError(null);
+        }
+
+        if (kembali.isEmpty()) {
+            etKembali.setError("Tanggal pengembalian belum diisi");
+            valid = false;
+        } else if (kembali.length() > 8) {
+            etKembali.setError("Format tanggal pengembalian bukan ddmmyyyy");
+            valid = false;
+        } else {
+            etKembali.setError(null);
         }
 
         return valid;

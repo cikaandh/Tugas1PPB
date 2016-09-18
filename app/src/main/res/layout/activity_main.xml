@@ -54,22 +54,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <EditText
-            android:hint="Nama Penyewa"
             android:id="@+id/editTextNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
+            android:layout_weight="0.01"
+            android:hint="Nama Penyewa"
+            android:textIsSelectable="false" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <EditText
-            android:hint="Nomor Telepon"
             android:id="@+id/editTextTelp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.01"
+            android:hint="Nomor Telepon"
             android:inputType="numberSigned" />
         </android.support.design.widget.TextInputLayout>
 
@@ -81,11 +82,11 @@
             />
 
         <Spinner
-            android:entries="@array/Gunung"
             android:id="@+id/Gunung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.01"
+            android:entries="@array/Gunung"
             />
 
 
@@ -93,22 +94,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <EditText
-            android:hint="Waktu mulai sewa"
             android:id="@+id/editTextSewa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
+            android:layout_weight="0.01"
+            android:hint="Waktu mulai sewa"
+            android:inputType="numberSigned" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <EditText
-            android:hint="Waktu pengembalian "
             android:id="@+id/editTextKembali"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01" />
+            android:layout_weight="0.01"
+            android:hint="Waktu pengembalian "
+            android:inputType="numberSigned" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
