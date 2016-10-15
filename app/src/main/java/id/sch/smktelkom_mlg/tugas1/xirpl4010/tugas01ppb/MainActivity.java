@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             if (cbKmpr.isChecked()) hsl2 += cbKmpr.getText() + "\n";
             if (cbTas.isChecked()) hsl2 += cbTas.getText() + "\n";
             if (cbHL.isChecked()) hsl2 += cbHL.getText() + "\n";
+            if (cbTenda.isChecked()) hsl2 += cbTenda.getText() + "\n";
             if (hsl2.length() == startlen) hsl2 += "Anda Belum Pernah Memilih";
 
             String jeniskelamin = "";
