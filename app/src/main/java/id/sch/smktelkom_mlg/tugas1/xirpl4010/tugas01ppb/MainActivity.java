@@ -78,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
             if (hsl2.length() == startlen) hsl2 += "Anda Belum Pernah Memilih";
 
             String jeniskelamin = "";
+
             if (rbLaki.isChecked()) jeniskelamin = "Laki-Laki";
             else if (rbPr.isChecked()) jeniskelamin = "Perempuan";
             else jeniskelamin = "";
-
 
             tvHasil.setText
                     ("Nama : \n" + nama + "\n\nNomor Telepon :\n" + telp +
