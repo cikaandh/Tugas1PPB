@@ -75,6 +75,33 @@
         </android.support.design.widget.TextInputLayout>
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.01"
+            android:text="Jenis Kelamin :" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupJK"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/radioButtonLaki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Laki-Laki" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Perempuan" />
+        </RadioGroup>
+
+        <TextView
             android:id="@+id/textView4"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
@@ -128,32 +155,6 @@
             android:layout_weight="0.01"
             android:checked="false"
             android:text="Tenda " />
-
-        <RadioGroup
-            android:layout_width="206dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp">
-
-            <RadioButton
-                android:id="@+id/radioButtonSL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Tenda Single Layer " />
-
-            <RadioButton
-                android:id="@+id/radioButtonDL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Tenda Double Layer " />
-
-
-        </RadioGroup>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></android.support.design.widget.TextInputLayout>
 
         <CheckBox
             android:id="@+id/checkBoxSB"

@@ -7,15 +7,17 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText etNama, etTelp, etSewa, etKembali;
+    RadioGroup rgJK;
     Spinner Gunung;
     CheckBox cbTenda, cbSB, cbKmpr, cbTas, cbHL;
-    RadioButton rbSL, rbDL;
+    RadioButton rbLaki, rbPr;
     Button bSewa;
     TextView tvHasil;
 
@@ -39,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         Gunung = (Spinner) findViewById(R.id.Gunung);
 
-        rbSL = (RadioButton) findViewById(R.id.radioButtonSL);
-        rbDL = (RadioButton) findViewById(R.id.radioButtonDL);
+        rbLaki = (RadioButton) findViewById(R.id.radioButtonLaki);
+        rbPr = (RadioButton) findViewById(R.id.radioButtonPr);
 
         bSewa = (Button) findViewById(R.id.buttonSewa);
 
@@ -74,15 +76,15 @@ public class MainActivity extends AppCompatActivity {
             if (cbHL.isChecked()) hsl2 += cbHL.getText() + "\n";
             if (hsl2.length() == startlen) hsl2 += "Anda Belum Pernah Memilih";
 
-            String hsl3 = "Jenis tenda yang dipesan :\n ";
-            if (rbSL.isChecked()) {
-                hsl3 = rbSL.getText().toString();
-            } else if (rbDL.isChecked()) {
-                hsl3 = rbDL.getText().toString();
-            }
+            String jeniskelamin = "";
+            if (rbLaki.isChecked()) jeniskelamin = "Laki-Laki";
+            else if (rbPr.isChecked()) jeniskelamin = "Perempuan";
+            else jeniskelamin = "";
+
 
             tvHasil.setText
-                    ("Nama : \n" + nama + "\n\nNomor Telepon :\n" + telp + "\n\n Gunung yang akan didaki :\n" + gunung + "\n\n Waktu penyewaan :\n" + sewa + "\n\nWaktu Pengembalian :\n" + kembali + "\n\n" + hsl2 + hsl3
+                    ("Nama : \n" + nama + "\n\nNomor Telepon :\n" + telp +
+                            "\n\nJenis Kelamin :\n" + jeniskelamin + "\n\n Gunung yang akan didaki :\n" + gunung + "\n\n Waktu penyewaan :\n" + sewa + "\n\nWaktu Pengembalian :\n" + kembali + "\n\n" + hsl2
                     );
         }
     }
